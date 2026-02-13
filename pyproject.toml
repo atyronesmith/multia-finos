@@ -1,0 +1,17 @@
+[project]
+name = "multia"
+version = "0.1.0"
+description = "Multi-agent startup evaluator using LlamaStack + Ollama"
+requires-python = ">=3.11"
+dependencies = [
+    "llama-stack-client>=0.2.0",
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.34.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[project.scripts]
+multia = "main:main"

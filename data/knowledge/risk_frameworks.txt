@@ -1,0 +1,47 @@
+Risk Assessment Frameworks for Startups
+
+PEST Analysis (External Risks):
+- Political: Government policy changes, trade restrictions, political stability
+- Economic: Interest rates, inflation, economic cycles, currency fluctuations
+- Social: Demographics shifts, cultural trends, consumer behavior changes
+- Technological: Disruption risk, technology adoption curves, infrastructure changes
+
+Porter's Five Forces (Competitive Risks):
+1. Threat of new entrants: How easy is it for competitors to enter?
+2. Bargaining power of suppliers: Can suppliers squeeze margins?
+3. Bargaining power of buyers: Can customers demand lower prices?
+4. Threat of substitutes: Are there alternative solutions?
+5. Industry rivalry: How intense is existing competition?
+
+Startup-Specific Risk Categories:
+
+Product Risk: Can you build the product? Will it work as intended?
+- Technical feasibility uncertainty
+- Development timeline risk
+- Quality and reliability concerns
+
+Market Risk: Will customers want it? Will they pay enough?
+- Product-market fit uncertainty
+- Pricing model validation
+- Customer acquisition scalability
+
+Financial Risk: Can you fund it? Will unit economics work?
+- Runway and funding availability
+- Revenue model viability
+- Cash flow timing mismatches
+
+Team Risk: Can this team execute?
+- Key person dependencies
+- Skill gaps in critical areas
+- Founder dynamics and alignment
+
+Regulatory Risk: Will regulations help or hinder?
+- Compliance requirements and costs
+- Licensing and certification needs
+- Data privacy and security mandates
+
+Risk Scoring Matrix:
+- Critical (9-10): Existential threat, could kill the company
+- High (7-8): Significant impact, requires active mitigation
+- Medium (4-6): Manageable with planning and monitoring
+- Low (1-3): Minor impact, standard business operations

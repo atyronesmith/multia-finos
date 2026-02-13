@@ -1,0 +1,21 @@
+Key Startup Metrics for Evaluation
+
+Customer Acquisition Cost (CAC): The total cost of acquiring a new customer, including marketing, sales, and onboarding expenses. A healthy CAC should be recoverable within 12-18 months.
+
+Lifetime Value (LTV): The total revenue expected from a customer over their entire relationship. The LTV:CAC ratio should be at least 3:1 for a sustainable business.
+
+Monthly Recurring Revenue (MRR): Predictable revenue generated each month from subscriptions or contracts. MRR growth rate above 15% month-over-month is considered strong for early-stage startups.
+
+Churn Rate: The percentage of customers who stop using the product in a given period. Monthly churn below 5% is acceptable for SMB products; below 2% is ideal for enterprise.
+
+Burn Rate: Monthly cash expenditure minus revenue. Startups should maintain at least 12-18 months of runway (cash / burn rate).
+
+Gross Margin: Revenue minus cost of goods sold, divided by revenue. Software companies should target 70%+ gross margins. Hardware companies typically see 40-60%.
+
+Net Revenue Retention (NRR): Revenue from existing customers compared to previous period, including upsells and churn. NRR above 120% indicates strong expansion revenue.
+
+Payback Period: Time to recover CAC from customer revenue. Under 12 months is excellent; 18-24 months is acceptable for enterprise.
+
+Rule of 40: Growth rate + profit margin should exceed 40% for SaaS companies. This balances growth and profitability.
+
+Unit Economics: Revenue per unit minus variable cost per unit. Must be positive and improving over time for a viable business.

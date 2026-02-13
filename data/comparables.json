@@ -1,0 +1,112 @@
+[
+  {
+    "name": "Plenty",
+    "industry": "agtech",
+    "tags": "indoor farming, vertical farming, ai",
+    "founded": 2014,
+    "funding_mm": 941,
+    "revenue_mm": 15,
+    "employees": 500,
+    "stage": "Late",
+    "outcome": "Operating - pivoted to fewer crops"
+  },
+  {
+    "name": "Bowery Farming",
+    "industry": "agtech",
+    "tags": "indoor farming, vertical farming, automation",
+    "founded": 2015,
+    "funding_mm": 647,
+    "revenue_mm": 10,
+    "stage": "Late",
+    "employees": 300,
+    "outcome": "Restructured 2023"
+  },
+  {
+    "name": "Stripe",
+    "industry": "fintech",
+    "tags": "payments, api, developer tools",
+    "founded": 2010,
+    "funding_mm": 8700,
+    "revenue_mm": 14000,
+    "employees": 8000,
+    "stage": "Late",
+    "outcome": "Private - highly profitable"
+  },
+  {
+    "name": "Plaid",
+    "industry": "fintech",
+    "tags": "banking api, data aggregation, open banking",
+    "founded": 2013,
+    "funding_mm": 734,
+    "revenue_mm": 500,
+    "employees": 1200,
+    "stage": "Late",
+    "outcome": "Private - growing"
+  },
+  {
+    "name": "Tempus",
+    "industry": "healthtech",
+    "tags": "precision medicine, ai, diagnostics, genomics",
+    "founded": 2015,
+    "funding_mm": 1300,
+    "revenue_mm": 600,
+    "employees": 2500,
+    "stage": "Public",
+    "outcome": "IPO 2024"
+  },
+  {
+    "name": "Nuro",
+    "industry": "logistics",
+    "tags": "autonomous delivery, robotics, last mile",
+    "founded": 2016,
+    "funding_mm": 2100,
+    "revenue_mm": 5,
+    "employees": 1100,
+    "stage": "Late",
+    "outcome": "Pre-revenue, scaling"
+  },
+  {
+    "name": "Anduril",
+    "industry": "defense",
+    "tags": "defense tech, ai, autonomous systems, drones",
+    "founded": 2017,
+    "funding_mm": 3700,
+    "revenue_mm": 800,
+    "employees": 2500,
+    "stage": "Late",
+    "outcome": "Rapid growth"
+  },
+  {
+    "name": "Scale AI",
+    "industry": "ai infrastructure",
+    "tags": "data labeling, ai training data, ml ops",
+    "founded": 2016,
+    "funding_mm": 1000,
+    "revenue_mm": 750,
+    "employees": 600,
+    "stage": "Late",
+    "outcome": "Profitable"
+  },
+  {
+    "name": "Notion",
+    "industry": "saas",
+    "tags": "productivity, collaboration, workspace, notes",
+    "founded": 2013,
+    "funding_mm": 343,
+    "revenue_mm": 250,
+    "employees": 800,
+    "stage": "Late",
+    "outcome": "Growing rapidly"
+  },
+  {
+    "name": "Cerebras",
+    "industry": "ai infrastructure",
+    "tags": "ai chips, hardware, inference, training",
+    "founded": 2016,
+    "funding_mm": 720,
+    "revenue_mm": 80,
+    "employees": 450,
+    "stage": "Late",
+    "outcome": "Filed for IPO"
+  }
+]

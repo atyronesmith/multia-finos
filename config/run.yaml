@@ -1,0 +1,99 @@
+version: '2'
+image_name: multia
+container_image: null
+external_providers_dir: null
+
+apis:
+  - agents
+  - inference
+  - tool_runtime
+  - vector_io
+  - telemetry
+  - safety
+
+providers:
+  inference:
+    - provider_id: ollama
+      provider_type: remote::ollama
+      config:
+        url: http://localhost:11434
+
+  vector_io:
+    - provider_id: faiss
+      provider_type: inline::faiss
+      config:
+        kvstore:
+          type: sqlite
+          db_path: ~/.llama/distributions/multia/faiss_store.db
+
+  safety:
+    - provider_id: llama-guard
+      provider_type: inline::llama-guard
+      config:
+        excluded_categories: []
+
+  agents:
+    - provider_id: meta-reference
+      provider_type: inline::meta-reference
+      config:
+        persistence_store:
+          type: sqlite
+          db_path: ~/.llama/distributions/multia/agents_store.db
+        responses_store:
+          type: sqlite
+          db_path: ~/.llama/distributions/multia/responses_store.db
+
+  tool_runtime:
+    - provider_id: rag-runtime
+      provider_type: inline::rag-runtime
+      config: {}
+
+  telemetry:
+    - provider_id: meta-reference
+      provider_type: inline::meta-reference
+      config:
+        service_name: multia
+        sinks: console
+        sqlite_db_path: ~/.llama/distributions/multia/trace_store.db
+
+metadata_store:
+  type: sqlite
+  db_path: ~/.llama/distributions/multia/registry.db
+
+inference_store:
+  type: sqlite
+  db_path: ~/.llama/distributions/multia/inference_store.db
+
+models:
+  - model_id: ollama/llama3.1:8b
+    provider_id: ollama
+    provider_model_id: llama3.1:8b
+    model_type: llm
+    metadata: {}
+  - model_id: ollama/llama3.2:3b
+    provider_id: ollama
+    provider_model_id: llama3.2:3b
+    model_type: llm
+    metadata: {}
+  - model_id: ollama/nomic-embed-text
+    provider_id: ollama
+    provider_model_id: nomic-embed-text
+    model_type: embedding
+    metadata:
+      embedding_dimension: 768
+      context_length: 8192
+
+shields: []
+
+vector_dbs: []
+
+tool_groups:
+  - toolgroup_id: builtin::rag
+    provider_id: rag-runtime
+
+scoring_fns: []
+benchmarks: []
+datasets: []
+
+server:
+  port: 8321

@@ -1,0 +1,34 @@
+Market Sizing Frameworks for Startup Evaluation
+
+Top-Down Approach (TAM-SAM-SOM):
+- Total Addressable Market (TAM): The total global revenue opportunity if 100% market share were achieved. Usually sourced from industry reports.
+- Serviceable Addressable Market (SAM): The portion of TAM that your product can realistically serve given geography, pricing, and feature constraints.
+- Serviceable Obtainable Market (SOM): The realistic market share achievable in the near term (3-5 years). Typically 1-5% of SAM for startups.
+
+Bottom-Up Approach:
+Start with unit economics and scale up. Number of potential customers × average revenue per customer = market size estimate. More credible than top-down for investor presentations.
+
+Market Growth Rate:
+- Hypergrowth markets (>25% CAGR): AI, climate tech, space tech
+- Fast growth (15-25% CAGR): Fintech, healthtech, cybersecurity
+- Moderate growth (5-15% CAGR): SaaS, e-commerce, edtech
+- Slow growth (<5% CAGR): Traditional retail, legacy enterprise
+
+Timing Indicators:
+- Technology readiness: Is the enabling technology mature enough?
+- Regulatory environment: Are regulations enabling or blocking?
+- Customer readiness: Are customers aware of the problem and willing to pay?
+- Infrastructure: Is the necessary infrastructure (internet, mobile, cloud) in place?
+
+Competition Analysis:
+- Blue ocean: No direct competitors, new category creation
+- Fragmented market: Many small players, consolidation opportunity
+- Oligopoly: Few dominant players, differentiation required
+- Monopoly: One dominant player, extremely difficult to enter
+
+Market Validation Signals:
+- Existing spending on workarounds or inferior solutions
+- Growing search volume for related terms
+- Venture capital investment in adjacent companies
+- Regulatory changes creating new opportunities
+- Technology cost curves making new solutions viable

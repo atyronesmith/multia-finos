@@ -1,0 +1,41 @@
+{
+  "market": [
+    {"risk": "Total addressable market smaller than estimated", "impact": "High", "likelihood": "Medium"},
+    {"risk": "Customer acquisition cost exceeds projections", "impact": "High", "likelihood": "High"},
+    {"risk": "Market timing too early or too late", "impact": "High", "likelihood": "Medium"},
+    {"risk": "Incumbent competitor launches similar product", "impact": "Medium", "likelihood": "High"},
+    {"risk": "Target customers unwilling to switch from current solution", "impact": "High", "likelihood": "Medium"}
+  ],
+  "technology": [
+    {"risk": "Core technology not feasible at target cost", "impact": "Critical", "likelihood": "Medium"},
+    {"risk": "Scaling architecture fails under production load", "impact": "High", "likelihood": "Medium"},
+    {"risk": "Key dependency (API, library, platform) becomes unavailable", "impact": "Medium", "likelihood": "Low"},
+    {"risk": "Data quality insufficient for ML model accuracy", "impact": "High", "likelihood": "High"},
+    {"risk": "Security vulnerability in core system", "impact": "Critical", "likelihood": "Low"}
+  ],
+  "financial": [
+    {"risk": "Burn rate exceeds projections by 2x+", "impact": "Critical", "likelihood": "Medium"},
+    {"risk": "Revenue ramp slower than projected", "impact": "High", "likelihood": "High"},
+    {"risk": "Unit economics never reach profitability", "impact": "Critical", "likelihood": "Medium"},
+    {"risk": "Unable to raise next funding round", "impact": "Critical", "likelihood": "Medium"},
+    {"risk": "Key cost input (materials, compute) price increase", "impact": "Medium", "likelihood": "Medium"}
+  ],
+  "regulatory": [
+    {"risk": "New regulation restricts core business model", "impact": "Critical", "likelihood": "Low"},
+    {"risk": "Data privacy compliance costs exceed budget", "impact": "Medium", "likelihood": "Medium"},
+    {"risk": "Industry licensing requirements delay launch", "impact": "High", "likelihood": "Medium"},
+    {"risk": "Export/import restrictions affect supply chain", "impact": "Medium", "likelihood": "Low"}
+  ],
+  "team": [
+    {"risk": "Key technical founder leaves", "impact": "Critical", "likelihood": "Low"},
+    {"risk": "Unable to hire specialized talent", "impact": "High", "likelihood": "Medium"},
+    {"risk": "Founder conflict on strategic direction", "impact": "High", "likelihood": "Medium"},
+    {"risk": "Team lacks domain expertise", "impact": "Medium", "likelihood": "Medium"}
+  ],
+  "operational": [
+    {"risk": "Supply chain disruption delays product delivery", "impact": "High", "likelihood": "Medium"},
+    {"risk": "Customer support costs scale faster than revenue", "impact": "Medium", "likelihood": "High"},
+    {"risk": "Quality control issues damage brand reputation", "impact": "High", "likelihood": "Medium"},
+    {"risk": "Key vendor or partner relationship fails", "impact": "Medium", "likelihood": "Low"}
+  ]
+}
