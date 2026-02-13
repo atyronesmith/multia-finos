@@ -1,0 +1,18 @@
+policies:
+  # Specialists can only use their designated tools
+  - name: specialist_tool_restriction
+    description: Each specialist agent may only use its registered tools
+    effect: deny
+    condition: tool_not_in_allowed_list
+
+  # Specialists cannot use the coordinator model
+  - name: specialist_model_restriction
+    description: Specialist agents cannot use the coordinator model
+    effect: deny
+    condition: model_not_in_allowed_list
+
+  # Coordinator cannot use tools
+  - name: coordinator_no_tools
+    description: Coordinator agent does not use any tools
+    effect: deny
+    condition: tool_not_in_allowed_list

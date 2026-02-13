@@ -58,7 +58,7 @@ FINOS Layer         → multia Implementation
 
 ## Implementation Phases
 
-### Phase 7: Input Layer + API Gateway
+### Phase 7: Input Layer + API Gateway ✅
 
 **FINOS Layer:** 1 (Input) + 2 (Orchestration)
 **Mitigations:** MI-3 (Firewalling), MI-8 (QoS)
@@ -80,7 +80,7 @@ Add a FastAPI gateway that wraps the pipeline, providing:
 
 ---
 
-### Phase 8: Agent Registry + Policy Engine
+### Phase 8: Agent Registry + Policy Engine ✅
 
 **FINOS Layer:** 2 (Orchestration) + 3 (Agent/Memory)
 **Mitigations:** MI-17 (AI Firewall), MI-18 (Agent Least Privilege)

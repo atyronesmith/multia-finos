@@ -1,0 +1,39 @@
+agents:
+  coordinator:
+    role: coordinator
+    description: Decomposes startup ideas into briefs and synthesizes final reports
+    allowed_models:
+      - ollama/llama3.1:8b
+    allowed_tools: []
+
+  market:
+    role: specialist
+    description: Market analysis and competitive landscape evaluation
+    allowed_models:
+      - ollama/llama3.2:3b
+    allowed_tools:
+      - search_comparables
+
+  tech:
+    role: specialist
+    description: Technical feasibility and complexity assessment
+    allowed_models:
+      - ollama/llama3.2:3b
+    allowed_tools:
+      - complexity_estimator
+
+  finance:
+    role: specialist
+    description: Financial viability and unit economics evaluation
+    allowed_models:
+      - ollama/llama3.2:3b
+    allowed_tools:
+      - calculator
+
+  risk:
+    role: specialist
+    description: Risk identification and mitigation assessment
+    allowed_models:
+      - ollama/llama3.2:3b
+    allowed_tools:
+      - risk_checklist
