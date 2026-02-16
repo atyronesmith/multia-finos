@@ -157,7 +157,7 @@ Layer LlamaStack shields at system boundaries, plus custom PII handling:
 
 ---
 
-### Phase 11: Tool Registry + Validation
+### Phase 11: Tool Registry + Validation ✅
 
 **FINOS Layer:** 4 (Tools/MCP)
 **Mitigations:** MI-19 (Tool Chain Validation), MI-20 (MCP Security Governance)

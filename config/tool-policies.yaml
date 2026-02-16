@@ -1,0 +1,56 @@
+tiers:
+  # Approved tools run without restriction
+  approved:
+    - calculator
+    - search_comparables
+    - complexity_estimator
+    - risk_checklist
+
+  # Conditional tools are allowed but logged for audit
+  conditional:
+    - web_search
+    - code_executor
+
+  # Blocked tools are denied outright
+  blocked:
+    - file_system
+    - shell_exec
+    - network_scan
+
+# Parameter schemas for validation (tool_name -> expected params)
+schemas:
+  calculator:
+    required: [operation, x, y]
+    params:
+      operation:
+        type: string
+        allowed: [add, subtract, multiply, divide, percentage]
+      x:
+        type: number
+      y:
+        type: number
+
+  search_comparables:
+    required: [industry]
+    params:
+      industry:
+        type: string
+
+  complexity_estimator:
+    required: [components, has_hardware, needs_realtime]
+    params:
+      components:
+        type: string
+      has_hardware:
+        type: string
+        allowed: ["yes", "no"]
+      needs_realtime:
+        type: string
+        allowed: ["yes", "no"]
+
+  risk_checklist:
+    required: [category]
+    params:
+      category:
+        type: string
+        allowed: [market, technology, financial, regulatory, team, operational]
