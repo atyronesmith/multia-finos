@@ -241,7 +241,7 @@ LlamaStack has a built-in `llm-as-judge` scoring provider. We use it instead of 
 
 ---
 
-### Phase 14: Encrypted State Persistence
+### Phase 14: Encrypted State Persistence ✅
 
 **FINOS Layer:** 3 (Agent/Memory)
 **Mitigations:** MI-22 (Agent Isolation), MI-14 (Encryption at Rest)
