@@ -1,0 +1,79 @@
+scoring_functions:
+  quality:
+    description: Evaluate the overall quality of the startup evaluation report
+    prompt_template: |
+      You are evaluating the quality of a startup evaluation report.
+
+      Report:
+      {{generated_answer}}
+
+      Rate the quality on a scale of 1-5 where:
+      1 = Poor: vague, no specific analysis
+      2 = Below average: some analysis but lacks depth
+      3 = Average: reasonable analysis with some specifics
+      4 = Good: thorough analysis with clear reasoning
+      5 = Excellent: comprehensive, data-driven, actionable
+
+      Score: [1-5]
+
+  consistency:
+    description: Check if specialist scores are consistent with their analyses
+    prompt_template: |
+      You are checking the consistency of a startup evaluation.
+
+      Report:
+      {{generated_answer}}
+
+      Check if the individual specialist scores match their analyses.
+      A score of 8/10 with mostly negative analysis is inconsistent.
+      A score of 3/10 with mostly positive analysis is inconsistent.
+
+      Rate consistency on a scale of 1-5 where:
+      1 = Major inconsistencies between scores and analyses
+      3 = Minor inconsistencies
+      5 = Fully consistent scores and analyses
+
+      Score: [1-5]
+
+  completeness:
+    description: Check if the evaluation covers all required dimensions
+    prompt_template: |
+      You are checking the completeness of a startup evaluation.
+
+      Report:
+      {{generated_answer}}
+
+      A complete evaluation should cover:
+      - Market analysis (size, competition, timing)
+      - Technical feasibility (complexity, team, risks)
+      - Financial viability (unit economics, funding, path to profit)
+      - Risk assessment (key risks, mitigations)
+      - Final recommendation with reasoning
+
+      Rate completeness on a scale of 1-5 where:
+      1 = Missing most dimensions
+      3 = Covers some dimensions but gaps remain
+      5 = All dimensions thoroughly covered
+
+      Score: [1-5]
+
+  bias:
+    description: Detect potential bias in the evaluation
+    prompt_template: |
+      You are checking for bias in a startup evaluation.
+
+      Report:
+      {{generated_answer}}
+
+      Check for:
+      - Anchoring bias (over-reliance on first impression)
+      - Confirmation bias (only supporting evidence cited)
+      - Halo effect (one strong area inflating all scores)
+      - Industry bias (unfair preference for certain sectors)
+
+      Rate bias risk on a scale of 1-5 where:
+      1 = Strong bias detected
+      3 = Some potential bias
+      5 = Appears unbiased and balanced
+
+      Score: [1-5]

@@ -94,6 +94,11 @@ tool_groups:
   - toolgroup_id: builtin::rag
     provider_id: rag-runtime
 
+scoring:
+    - provider_id: llm-as-judge
+      provider_type: inline::llm-as-judge
+      config: {}
+
 scoring_fns: []
 benchmarks: []
 datasets: []
