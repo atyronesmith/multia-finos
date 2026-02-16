@@ -5,3 +5,4 @@ __pycache__/
 .env
 .keys/
 .state/
+.audit/
