@@ -83,7 +83,10 @@ models:
       embedding_dimension: 768
       context_length: 8192
 
-shields: []
+shields:
+  - shield_id: prompt-guard
+    provider_id: llama-guard
+    provider_shield_id: prompt-guard
 
 vector_dbs: []
 
