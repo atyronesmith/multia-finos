@@ -1,0 +1,29 @@
+{
+  "patterns": [
+    {
+      "name": "email",
+      "regex": "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}",
+      "replacement": "[EMAIL REDACTED]"
+    },
+    {
+      "name": "phone_us",
+      "regex": "\\b(?:\\+1[-.]?)?\\(?\\d{3}\\)?[-.]?\\d{3}[-.]?\\d{4}\\b",
+      "replacement": "[PHONE REDACTED]"
+    },
+    {
+      "name": "ssn",
+      "regex": "\\b\\d{3}-\\d{2}-\\d{4}\\b",
+      "replacement": "[SSN REDACTED]"
+    },
+    {
+      "name": "credit_card",
+      "regex": "\\b(?:\\d{4}[-\\s]?){3}\\d{4}\\b",
+      "replacement": "[CARD REDACTED]"
+    },
+    {
+      "name": "ip_address",
+      "regex": "\\b(?:(?:25[0-5]|2[0-4]\\d|[01]?\\d\\d?)\\.){3}(?:25[0-5]|2[0-4]\\d|[01]?\\d\\d?)\\b",
+      "replacement": "[IP REDACTED]"
+    }
+  ]
+}
