@@ -1,0 +1,65 @@
+[
+  {
+    "industry": "fintech",
+    "sentiment": "positive",
+    "confidence": 0.82,
+    "trend": "growing",
+    "key_drivers": ["digital payments adoption", "embedded finance", "open banking regulations"],
+    "risk_factors": ["regulatory uncertainty", "market saturation in payments"],
+    "last_updated": "2026-01-15"
+  },
+  {
+    "industry": "healthtech",
+    "sentiment": "positive",
+    "confidence": 0.78,
+    "trend": "growing",
+    "key_drivers": ["AI diagnostics", "telehealth adoption", "precision medicine"],
+    "risk_factors": ["FDA approval timelines", "data privacy concerns"],
+    "last_updated": "2026-01-15"
+  },
+  {
+    "industry": "agtech",
+    "sentiment": "neutral",
+    "confidence": 0.65,
+    "trend": "stable",
+    "key_drivers": ["food security concerns", "climate adaptation", "automation"],
+    "risk_factors": ["high capex", "slow adoption cycles", "weather dependency"],
+    "last_updated": "2026-01-15"
+  },
+  {
+    "industry": "ai infrastructure",
+    "sentiment": "very positive",
+    "confidence": 0.91,
+    "trend": "accelerating",
+    "key_drivers": ["enterprise AI adoption", "inference demand", "open source models"],
+    "risk_factors": ["commoditization", "compute cost volatility"],
+    "last_updated": "2026-01-15"
+  },
+  {
+    "industry": "defense",
+    "sentiment": "positive",
+    "confidence": 0.85,
+    "trend": "growing",
+    "key_drivers": ["government spending increases", "autonomous systems", "cyber defense"],
+    "risk_factors": ["procurement cycles", "geopolitical shifts"],
+    "last_updated": "2026-01-15"
+  },
+  {
+    "industry": "saas",
+    "sentiment": "neutral",
+    "confidence": 0.60,
+    "trend": "maturing",
+    "key_drivers": ["AI-native tools", "vertical SaaS", "workflow automation"],
+    "risk_factors": ["churn pressure", "AI disruption of existing tools"],
+    "last_updated": "2026-01-15"
+  },
+  {
+    "industry": "logistics",
+    "sentiment": "neutral",
+    "confidence": 0.62,
+    "trend": "stable",
+    "key_drivers": ["autonomous delivery", "supply chain optimization", "last mile innovation"],
+    "risk_factors": ["regulatory hurdles", "high capital requirements"],
+    "last_updated": "2026-01-15"
+  }
+]

@@ -47,6 +47,9 @@ providers:
     - provider_id: rag-runtime
       provider_type: inline::rag-runtime
       config: {}
+    - provider_id: model-context-protocol
+      provider_type: remote::model-context-protocol
+      config: {}
 
   telemetry:
     - provider_id: meta-reference

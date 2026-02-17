@@ -1,0 +1,79 @@
+[
+  {
+    "company": "Stripe",
+    "industry": "fintech",
+    "total_funding_mm": 8700,
+    "last_round": "Series I",
+    "last_round_mm": 6500,
+    "valuation_mm": 65000,
+    "investors": ["Sequoia", "Andreessen Horowitz", "Founders Fund"],
+    "stage": "Late",
+    "year_founded": 2010
+  },
+  {
+    "company": "Plaid",
+    "industry": "fintech",
+    "total_funding_mm": 734,
+    "last_round": "Series D",
+    "last_round_mm": 425,
+    "valuation_mm": 13400,
+    "investors": ["Altimeter", "Silver Lake", "Ribbit Capital"],
+    "stage": "Late",
+    "year_founded": 2013
+  },
+  {
+    "company": "Tempus",
+    "industry": "healthtech",
+    "total_funding_mm": 1300,
+    "last_round": "IPO",
+    "last_round_mm": 410,
+    "valuation_mm": 6100,
+    "investors": ["NEA", "Revolution Growth", "Google Ventures"],
+    "stage": "Public",
+    "year_founded": 2015
+  },
+  {
+    "company": "Scale AI",
+    "industry": "ai infrastructure",
+    "total_funding_mm": 1000,
+    "last_round": "Series F",
+    "last_round_mm": 325,
+    "valuation_mm": 13800,
+    "investors": ["Accel", "Tiger Global", "Index Ventures"],
+    "stage": "Late",
+    "year_founded": 2016
+  },
+  {
+    "company": "Anduril",
+    "industry": "defense",
+    "total_funding_mm": 3700,
+    "last_round": "Series F",
+    "last_round_mm": 1500,
+    "valuation_mm": 14000,
+    "investors": ["Founders Fund", "Andreessen Horowitz", "Valor Equity"],
+    "stage": "Late",
+    "year_founded": 2017
+  },
+  {
+    "company": "Plenty",
+    "industry": "agtech",
+    "total_funding_mm": 941,
+    "last_round": "Series E",
+    "last_round_mm": 400,
+    "valuation_mm": 3500,
+    "investors": ["SoftBank", "Bezos Expeditions", "DCM"],
+    "stage": "Late",
+    "year_founded": 2014
+  },
+  {
+    "company": "Nuro",
+    "industry": "logistics",
+    "total_funding_mm": 2100,
+    "last_round": "Series D",
+    "last_round_mm": 600,
+    "valuation_mm": 8600,
+    "investors": ["SoftBank", "Tiger Global", "Greylock"],
+    "stage": "Late",
+    "year_founded": 2016
+  }
+]

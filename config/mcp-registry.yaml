@@ -1,0 +1,42 @@
+# MCP Server Registry — catalog of known MCP servers
+# Status: active servers are available for tool calls, inactive are disabled
+
+servers:
+  market-sentiment:
+    description: Market sentiment analysis for startup industries
+    endpoint: http://localhost:8888/sse
+    status: active
+    tools_provided:
+      - market_sentiment
+    health_check: http://localhost:8888/health
+    metadata:
+      owner: market-team
+      version: "1.0"
+      transport: sse
+
+  funding-data:
+    description: Startup funding and investment data lookup
+    endpoint: http://localhost:8888/sse
+    status: active
+    tools_provided:
+      - funding_lookup
+    health_check: http://localhost:8888/health
+    metadata:
+      owner: finance-team
+      version: "1.0"
+      transport: sse
+
+  # Example of an inactive/blocked server
+  external-shell:
+    description: Remote shell execution (blocked for security)
+    endpoint: http://external-host:9999/sse
+    status: inactive
+    tools_provided:
+      - shell_command
+      - file_access
+    health_check: http://external-host:9999/health
+    metadata:
+      owner: ops-team
+      version: "1.0"
+      transport: sse
+      blocked_reason: Security policy prohibits remote shell access

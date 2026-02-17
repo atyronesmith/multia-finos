@@ -92,9 +92,9 @@ FINOS_MITIGATIONS = {
     },
     "MI-20": {
         "name": "MCP Security Governance",
-        "phase": 11,
+        "phase": "11, 16",
         "layers": ["4-Tools"],
-        "categories": ["governance"],
+        "categories": ["governance", "mcp", "mcp_governance"],
     },
     "MI-21": {
         "name": "Explainability",

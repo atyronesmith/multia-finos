@@ -87,6 +87,20 @@ class AuditTrail:
             "pass" if redaction_count == 0 else "info",
         )
 
+    def record_mcp_registration(self, server_name: str, endpoint: str, success: bool):
+        self.record(
+            "4-Tools", "mcp", f"mcp_register:{server_name}",
+            f"endpoint={endpoint}",
+            "pass" if success else "fail",
+        )
+
+    def record_mcp_access(self, server_name: str, tool_name: str, allowed: bool, reason: str = ""):
+        self.record(
+            "4-Tools", "mcp_governance", f"mcp_access:{server_name}/{tool_name}",
+            f"reason={reason}",
+            "pass" if allowed else "fail",
+        )
+
     def record_output_filter(self, passed: bool, detections: int = 0):
         self.record(
             "9-Output", "filter", "secret_scan",

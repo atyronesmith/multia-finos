@@ -5,6 +5,8 @@ tiers:
     - search_comparables
     - complexity_estimator
     - risk_checklist
+    - mcp::market_sentiment
+    - mcp::funding_lookup
 
   # Conditional tools are allowed but logged for audit
   conditional:
@@ -16,6 +18,8 @@ tiers:
     - file_system
     - shell_exec
     - network_scan
+    - mcp::file_access
+    - mcp::shell_command
 
 # Parameter schemas for validation (tool_name -> expected params)
 schemas:
@@ -54,3 +58,15 @@ schemas:
       category:
         type: string
         allowed: [market, technology, financial, regulatory, team, operational]
+
+  mcp::market_sentiment:
+    required: [industry]
+    params:
+      industry:
+        type: string
+
+  mcp::funding_lookup:
+    required: [company_name]
+    params:
+      company_name:
+        type: string

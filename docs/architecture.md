@@ -55,7 +55,7 @@ User Input (startup idea)
 | 1. Input | FastAPI gateway with rate limiting and request validation | `src/gateway/` |
 | 2. Orchestration | Agent registry (YAML) + policy engine for least-privilege | `src/governance/registry.py`, `policy.py` |
 | 3. Agent/Memory | LlamaStack agents + encrypted state persistence (Fernet) | `src/security/state_manager.py`, `crypto.py` |
-| 4. Tools/MCP | Three-tier tool governance + parameter validation | `src/governance/tool_governance.py`, `tool_validator.py` |
+| 4. Tools/MCP | Three-tier tool governance + MCP registry/gateway + parameter validation | `src/governance/tool_governance.py`, `tool_validator.py`, `src/mcp/` |
 | 5. Model/LLM | PII sanitization + shield-based content safety | `src/security/sanitizer.py` |
 | 6. Knowledge | RAG with vector DB | `src/rag/` |
 | 7. Security | prompt-guard shields between agents, output secret scanning | `src/security/shield_gate.py`, `output_filter.py` |
@@ -97,6 +97,10 @@ src/
     tool_validator.py          # Parameter schema validation
     audit.py                   # Audit trail collector
     compliance_report.py       # FINOS coverage report generator
+  mcp/
+    registry.py                # MCP server registry (YAML-backed)
+    gateway.py                 # MCP gateway (registry check + governance)
+    demo_server.py             # Demo MCP server (FastMCP, SSE)
   security/
     shield_gate.py             # LlamaStack safety shield wrapper
     shield_runner.py           # Multi-shield aggregator
@@ -129,6 +133,7 @@ config/
   agent-registry.yaml          # Agent permissions
   policies.yaml                # Access control policies
   tool-policies.yaml           # Tool tier classifications
+  mcp-registry.yaml            # MCP server catalog
   scoring-functions.yaml       # LLM-as-Judge prompt templates
 ```
 
@@ -156,4 +161,5 @@ python examples/14_observability.py       # Alerting demo
 python examples/15_evaluation.py          # Bias detection
 python examples/16_persistent_state.py    # Encrypted state
 python examples/17_audit_trail.py         # Audit + compliance report
+python examples/18_mcp_tools.py          # MCP registry + gateway + governance
 ```

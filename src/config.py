@@ -31,3 +31,6 @@ GATEWAY_HOST = os.getenv("GATEWAY_HOST", "0.0.0.0")
 GATEWAY_PORT = int(os.getenv("GATEWAY_PORT", "8080"))
 RATE_LIMIT_CAPACITY = int(os.getenv("RATE_LIMIT_CAPACITY", "5"))
 RATE_LIMIT_REFILL_RATE = float(os.getenv("RATE_LIMIT_REFILL_RATE", "0.1"))
+
+# MCP demo server
+MCP_DEMO_PORT = int(os.getenv("MCP_DEMO_PORT", "8888"))

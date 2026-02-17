@@ -10,10 +10,11 @@ Everything runs locally: Ollama for inference, LlamaStack for agent runtime, no 
 
 ## Status: Complete
 
-All 9 phases (7-15) implemented. The system now covers:
+All 10 phases (7-16) implemented. The system now covers:
 
 - All 9 FINOS architecture layers implemented locally
 - 17 FINOS mitigations demonstrated with audit evidence
+- MCP Layer with registry, gateway, governance, and demo server
 - Inter-agent security validation (prompt-guard shields + semantic validator)
 - Policy enforcement (agent registry + tool governance)
 - Observability (LlamaStack Telemetry API + threshold alerting)
@@ -33,7 +34,8 @@ All 9 phases (7-15) implemented. The system now covers:
 | **Scoring API** (`client.scoring.score()`) | Score outputs against registered scoring functions | 13 |
 | **Scoring** (`inline::llm-as-judge`) | LLM-based output evaluation with customizable prompts | 13 |
 | **Datasets API** (`client.datasets.*`) | Register, store, iterate evaluation datasets | 13 |
-| **Toolgroups API** (`client.toolgroups.*`) | Register, list, manage tool groups | 11 |
+| **Toolgroups API** (`client.toolgroups.*`) | Register, list, manage tool groups | 11, 16 |
+| **MCP Client** (`remote::model-context-protocol`) | Connect to MCP servers over SSE | 16 |
 
 ## Architecture Mapping
 
@@ -281,6 +283,41 @@ Build audit trail on top of LlamaStack's telemetry and datasets APIs:
 
 ---
 
+### Phase 16: MCP Layer + MCP Registry ✅
+
+**FINOS Layer:** 4 (Tools/MCP)
+**Mitigations:** MI-19 (Tool Chain Validation), MI-20 (MCP Security Governance)
+**FINOS Risks:** AIR-SEC-025 (Tool Chain Manipulation), AIR-SEC-026 (MCP Supply Chain)
+**LlamaStack built-ins used:** Toolgroups API (`client.toolgroups.*`), MCP Client (`remote::model-context-protocol`)
+
+Add the full MCP Layer from the FINOS reference architecture:
+
+- **MCP Registry:** YAML-backed catalog of known MCP servers with endpoint, status, tools provided, and metadata
+- **MCP Gateway:** Checks registry (is server active?) then delegates to existing `ToolGovernance` (is tool approved/conditional/blocked?)
+- **MCP Governance:** Uses `mcp::` prefix for MCP tools in `tool-policies.yaml` tiers — existing `ToolGovernance.check()` works as-is
+- **Demo MCP Server:** FastMCP server with `market_sentiment` and `funding_lookup` tools over SSE transport
+- **Audit integration:** New `record_mcp_registration()` and `record_mcp_access()` methods on `AuditTrail`
+
+**Files:**
+- `src/mcp/__init__.py` — Package init
+- `src/mcp/registry.py` — MCP server registry (mirrors `AgentRegistry` pattern)
+- `src/mcp/gateway.py` — MCP gateway (registry check + governance)
+- `src/mcp/demo_server.py` — Demo MCP server (FastMCP, SSE)
+- `config/mcp-registry.yaml` — MCP server catalog
+- `data/mcp_market_sentiment.json` — Static sentiment data
+- `data/mcp_funding_data.json` — Static funding data
+- `scripts/start_mcp_demo.sh` — Launch script for demo server
+- `examples/18_mcp_tools.py` — Full demo: registry, governance, gateway, audit
+
+**Config changes:**
+- `config/run.yaml` — Added `remote::model-context-protocol` tool_runtime provider
+- `config/tool-policies.yaml` — Added `mcp::market_sentiment`, `mcp::funding_lookup` (approved), `mcp::file_access`, `mcp::shell_command` (blocked)
+- `config/agent-registry.yaml` — Added MCP tools to market and finance agents
+
+**Verification:** `python examples/18_mcp_tools.py` — runs offline (Parts 1-5). With servers: start LlamaStack + MCP demo server for full gateway registration.
+
+---
+
 ## What's Custom vs Built-in
 
 | Component | Approach | Reason |
@@ -294,6 +331,7 @@ Build audit trail on top of LlamaStack's telemetry and datasets APIs:
 | Secret-leak detection | **Custom** | Shields don't detect API keys/credentials |
 | Inter-agent validation | **Hybrid** | `prompt-guard` shield + custom semantic validator |
 | Tool governance | **Hybrid** | LlamaStack toolgroups API + custom policy layer |
+| MCP registry + gateway | **Hybrid** | LlamaStack MCP client + custom registry/gateway |
 | Tracing + observability | **Built-in** (Telemetry API) | LlamaStack provides traces, spans, events, metrics |
 | Alerting | **Custom** | LlamaStack has no alerting rules |
 | LLM-as-Judge scoring | **Built-in** (Scoring API) | LlamaStack provides `llm-as-judge` provider |
@@ -323,7 +361,7 @@ After all phases, the system demonstrates:
 | MI-17 AI Firewall | 8 | Custom policy engine |
 | MI-18 Agent Least Privilege | 8 | Custom agent registry + RBAC |
 | MI-19 Tool Validation | 11 | LlamaStack toolgroups API + custom governance |
-| MI-20 MCP Security | 11 | Toolgroup governance with tier classification |
+| MI-20 MCP Security | 11, 16 | MCP registry + gateway + toolgroup governance |
 | MI-21 Explainability | 13, 15 | Scoring API + telemetry-based audit trail |
 | MI-22 Agent Isolation | 9, 14 | `prompt-guard` shield + encrypted state |
 
@@ -342,6 +380,10 @@ src/
     tool_validator.py          # Custom
     audit.py                   # Hybrid (queries LlamaStack telemetry API)
     compliance_report.py       # Custom
+  mcp/
+    registry.py                # Custom (YAML-backed MCP server catalog)
+    gateway.py                 # Hybrid (wraps LlamaStack MCP client)
+    demo_server.py             # Custom (FastMCP demo server)
   security/
     sanitizer.py               # Custom (PII redaction)
     output_filter.py           # Custom (secret-leak detection)
@@ -360,9 +402,12 @@ config/
   agent-registry.yaml
   policies.yaml
   tool-policies.yaml
+  mcp-registry.yaml            # MCP server catalog
   scoring-functions.yaml
 data/
   pii_patterns.json
+  mcp_market_sentiment.json    # Static sentiment data for MCP demo
+  mcp_funding_data.json        # Static funding data for MCP demo
 examples/
   09_gateway.py
   10_policy_enforcement.py
@@ -373,6 +418,8 @@ examples/
   15_evaluation.py
   16_persistent_state.py
   17_audit_trail.py
+  18_mcp_tools.py
 scripts/
   view_traces.py
+  start_mcp_demo.sh
 ```

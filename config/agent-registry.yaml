@@ -13,6 +13,7 @@ agents:
       - ollama/llama3.2:3b
     allowed_tools:
       - search_comparables
+      - mcp::market_sentiment
 
   tech:
     role: specialist
@@ -29,6 +30,7 @@ agents:
       - ollama/llama3.2:3b
     allowed_tools:
       - calculator
+      - mcp::funding_lookup
 
   risk:
     role: specialist
