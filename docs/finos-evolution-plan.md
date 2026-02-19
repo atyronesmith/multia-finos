@@ -10,7 +10,7 @@ Everything runs locally: Ollama for inference, LlamaStack for agent runtime, no 
 
 ## Status: Complete
 
-All 10 phases (7-16) implemented. The system now covers:
+All 11 phases (7-17) implemented. The system now covers:
 
 - All 9 FINOS architecture layers implemented locally
 - 17 FINOS mitigations demonstrated with audit evidence
@@ -318,6 +318,35 @@ Add the full MCP Layer from the FINOS reference architecture:
 
 ---
 
+### Phase 17: Integration Test Suite ✅
+
+**FINOS Layer:** All layers
+**Mitigations:** All 17 mitigations verified offline
+**LlamaStack built-ins used:** None (all tests run offline)
+
+Automated pytest suite covering all phases (7-16) and FINOS mitigations. Tests load real YAML/JSON configs and verify module behavior without requiring LlamaStack, Ollama, or MCP servers.
+
+**110 tests across 8 files:**
+- `test_gateway.py` — Rate limiter, request validation, state, score extraction (Phase 7)
+- `test_governance.py` — Agent registry, policy engine, tool governance, validator, score consistency (Phases 8, 11)
+- `test_security.py` — PII sanitizer, output filter, crypto, encrypted state manager (Phases 10, 14)
+- `test_tools.py` — Calculator, market data, complexity, risk checklist (Phase 11)
+- `test_audit.py` — Audit trail, compliance report, scoring function IDs (Phases 13, 15)
+- `test_mcp.py` — MCP registry, MCP gateway (Phase 16)
+- `test_observability.py` — Alerts, bias detector (Phase 12)
+
+**Files:**
+- `tests/__init__.py` — Package init
+- `tests/conftest.py` — Shared fixtures (registries, governance, sample state/audit)
+- `tests/test_*.py` — 7 test modules
+
+**Config changes:**
+- `pyproject.toml` — Added `[project.optional-dependencies] test = ["pytest>=8.0"]`
+
+**Verification:** `pip install -e ".[test]" && pytest tests/ -v`
+
+---
+
 ## What's Custom vs Built-in
 
 | Component | Approach | Reason |
@@ -419,6 +448,15 @@ examples/
   16_persistent_state.py
   17_audit_trail.py
   18_mcp_tools.py
+tests/
+  conftest.py                  # Shared fixtures
+  test_gateway.py              # Phase 7
+  test_governance.py           # Phases 8, 11
+  test_security.py             # Phases 10, 14
+  test_tools.py                # Phase 11
+  test_audit.py                # Phases 13, 15
+  test_mcp.py                  # Phase 16
+  test_observability.py        # Phase 12
 scripts/
   view_traces.py
   start_mcp_demo.sh
